@@ -71,3 +71,8 @@ nest generate module tasks
 ```
 nest generate controller tasks tasks --no-spec
 ```
+
+### Services
+```
+nest generate service tasks --no-spec
+```
