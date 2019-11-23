@@ -65,3 +65,9 @@ $ yarn test:cov
 ### Modules
 ```
 nest generate module tasks
+```
+
+### Controllers
+```
+nest generate controller tasks tasks --no-spec
+```
