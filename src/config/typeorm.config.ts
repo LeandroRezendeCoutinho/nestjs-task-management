@@ -2,11 +2,11 @@ import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: 'motty.db.elephantsql.com',
+  host: 'localhost',
   port: 5432,
-  username: 'crsvguhs',
-  password: 'JXyMRgJfGSmXrbk9e6hVnPCPms36gsgJ',
-  database: 'crsvguhs',
+  username: 'postgres',
+  password: 'postgres',
+  database: 'postgres',
   entities: [__dirname + '/../**/*.entity.{js,ts}'],
   synchronize: true,
 };
