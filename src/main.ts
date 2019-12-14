@@ -19,12 +19,13 @@ import { AppModule } from './app.module';
 //     Logger.log( 'worker ' + process.pid + ' died.' );
 //   });
 // } else {
-  async function bootstrap() {
-    const app = await NestFactory.create<NestFastifyApplication>(
-      AppModule,
-      new FastifyAdapter()
-    )
-    await app.listen(3000);
-  }
-  bootstrap();
+async function bootstrap() {
+  const app = await NestFactory.create<NestFastifyApplication>(
+    AppModule,
+    new FastifyAdapter(),
+  );
+  const port = process.env.PORT || 3000;
+  await app.listen(port);
+}
+bootstrap();
 // }
