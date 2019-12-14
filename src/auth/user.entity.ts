@@ -14,7 +14,7 @@ export class User extends BaseEntity {
   @Column()
   password: string;
 
-  @Column()
+  @Column({nullable: true})
   salt: string;
 
   @OneToMany(type => Task, task => task.user, { eager: true })
