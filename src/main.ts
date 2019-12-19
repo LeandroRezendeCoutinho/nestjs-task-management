@@ -1,6 +1,7 @@
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from "@nestjs/platform-fastify";
 import { AppModule } from './app.module';
+import { Logger } from '@nestjs/common';
 // import * as cluster from 'cluster';
 // import * as os from 'os';
 // import { Logger } from '@nestjs/common';
@@ -20,12 +21,17 @@ import { AppModule } from './app.module';
 //   });
 // } else {
 async function bootstrap() {
+  const logger = new Logger('bootstrap');
+
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
     new FastifyAdapter(),
   );
+
   const port = process.env.PORT || 3000;
   await app.listen(port);
+
+  logger.log(`Application listening on port ${port}`);
 }
 bootstrap();
 // }
